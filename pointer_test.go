@@ -11,9 +11,10 @@ func TestPointer(t *testing.T) {
 
 	fmt.Println("myString is set to", myString)
 	ChangeUsingPointer(&myString)
+	fmt.Println("After Change using pointer", myString)
 }
 
-func ChangeUsingPointer(s *string)  {
+func ChangeUsingPointer(s *string) {
 	newValue := "red"
-	s = &newValue
+	*s = newValue
 }
